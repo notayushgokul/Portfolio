@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #0A0A0A;
+  --color-surface: #141414;
+  --color-border: #222222;
+  --color-text-primary: #F0EDE6;
+  --color-text-secondary: #6B6B6B;
+  --color-accent: #D4F15B;
+  --color-accent-hover: #C2E04A;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+html { scroll-behavior: smooth; }
+
+::selection {
+  background: #D4F15B;
+  color: #0A0A0A;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  /* The layout.tsx will load the local fonts and apply them */
+}
