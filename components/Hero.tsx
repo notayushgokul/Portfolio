@@ -4,23 +4,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export const Hero = () => {
-  const [time, setTime] = useState<string>("");
-
-  useEffect(() => {
-    const updateTime = () => {
-      setTime(new Date().toLocaleTimeString('en-US', { 
-        timeZone: 'Asia/Kolkata',
-        hour12: true, 
-        hour: '2-digit', 
-        minute: '2-digit', 
-        second: '2-digit' 
-      }));
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="relative min-h-[100svh] w-full overflow-hidden bg-black text-text-primary selection:bg-white selection:text-black flex flex-col justify-between p-6 md:p-8 lg:p-10">
       {/* Blue Glow Frame */}

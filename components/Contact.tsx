@@ -32,7 +32,7 @@ export const Contact = () => {
       } else {
         setStatus("error");
       }
-    } catch (err) {
+    } catch {
       setStatus("error");
     } finally {
       setLoading(false);
@@ -45,7 +45,7 @@ export const Contact = () => {
         {/* Header */}
         <div className="flex justify-between items-start md:items-end mb-12 lg:mb-20 border-b border-border/50 pb-8 md:pb-12">
           <h2 className="font-semibold text-[clamp(44px,7vw,110px)] leading-[0.85] tracking-tighter uppercase text-text-primary max-w-2xl">
-            LET'S TALK<span className="text-accent">.</span>
+            LET&apos;S TALK<span className="text-accent">.</span>
           </h2>
         </div>
 

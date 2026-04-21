@@ -45,7 +45,7 @@ export default function PrivacyPage() {
               <h2 className="text-2xl font-sans font-bold tracking-tight uppercase">Cookies & Tracking</h2>
               <p className="text-text-secondary leading-relaxed font-sans">
                 This website utilizes tracking and analytics tools (such as <span className="text-text-primary font-medium">Google Analytics</span> or <span className="text-text-primary font-medium">PostHog</span>) to understand visitor behavior. 
-                These tools use "cookies" to gather information about your interactions with the site, which helps me optimize the design and content performance.
+                These tools use &quot;cookies&quot; to gather information about your interactions with the site, which helps me optimize the design and content performance.
               </p>
             </div>
 

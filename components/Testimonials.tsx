@@ -34,7 +34,7 @@ export const Testimonials = () => {
             className="group flex flex-col justify-between p-10 md:p-14 bg-surface/30 border border-border/50 rounded-[2rem] hover:bg-surface/60 transition-colors duration-500"
           >
             <p className="font-semibold text-[clamp(24px,2.5vw,36px)] leading-[1.25] tracking-tight text-text-primary mb-24 md:mb-32">
-              "{t.quote}"
+              &quot;{t.quote}&quot;
             </p>
             
             <div className="flex items-center gap-4">
