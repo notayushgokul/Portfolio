@@ -84,7 +84,7 @@ export default function PrivacyPage() {
               </div>
               <h2 className="text-2xl font-sans font-bold tracking-tight uppercase">Privacy Inquiries</h2>
               <p className="text-text-secondary leading-relaxed font-sans">
-                If you have any questions regarding this Privacy Policy or wish to request the deletion of your data, please contact me directly at <a href="mailto:hello@ayushgokul.com" className="text-text-primary hover:text-accent transition-colors underline underline-offset-4">hello@ayushgokul.com</a>.
+                If you have any questions regarding this Privacy Policy or wish to request the deletion of your data, please contact me directly at <a href="mailto:ayushgokul2207@gmail.com" className="text-text-primary hover:text-accent transition-colors underline underline-offset-4">ayushgokul2207@gmail.com</a>.
               </p>
             </div>
 

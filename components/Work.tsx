@@ -93,6 +93,7 @@ export const Work = () => {
                   <Image 
                     src={projects[currentIndex].img} 
                     fill 
+                    unoptimized={true}
                     className="object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity duration-500" 
                     alt={projects[currentIndex].title} 
                   />

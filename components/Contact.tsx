@@ -111,7 +111,7 @@ export const Contact = () => {
 
               {status === "error" && (
                 <p className="text-red-400 text-[14px]">
-                  Something broke. Please email me directly: <a href="mailto:hello@ayushgokul.com" className="underline">hello@ayushgokul.com</a>
+                  Something broke. Please email me directly: <a href="mailto:ayushgokul2207@gmail.com" className="underline">ayushgokul2207@gmail.com</a>
                 </p>
               )}
 

@@ -18,7 +18,7 @@ const services = [
   {
     id: "0.0.3",
     title: "Retainer",
-    tag: "₹8,000/MO",
+    tag: "₹2,000/MO",
     desc: "Need it to stay sharp over time? Updates, hosting, and SEO handled natively. You focus on the product, I focus on the platform."
   }
 ];

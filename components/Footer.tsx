@@ -24,8 +24,8 @@ export const Footer = () => {
           <h2 className="text-4xl sm:text-5xl md:text-[4vw] lg:text-[60px] font-sans font-medium tracking-tight mb-4 md:mb-0">
             Work with me
           </h2>
-          <a href="mailto:hello@ayushgokul.com" className="text-4xl sm:text-5xl md:text-[4vw] lg:text-[60px] font-sans font-medium tracking-tight hover:text-accent transition-colors">
-            hello@ayushgokul.com
+          <a href="mailto:ayushgokul2207@gmail.com" className="text-4xl sm:text-5xl md:text-[4vw] lg:text-[60px] font-sans font-medium tracking-tight hover:text-accent transition-colors">
+            ayushgokul2207@gmail.com
           </a>
         </div>
 
