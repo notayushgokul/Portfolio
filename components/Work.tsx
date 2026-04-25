@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const projects = [
   {
@@ -8,18 +9,21 @@ const projects = [
     title: "Happy Feet",
     subtitle: "View Case",
     link: "https://happyfeet-eight.vercel.app/",
+    img: "/happy-feet.png",
   },
   {
     id: "02",
     title: "CRM Outreach + Lead Generator",
     subtitle: "View Case",
     link: "#",
+    img: "",
   },
   {
     id: "03",
     title: "Noir Grillz",
     subtitle: "View Case",
     link: "#",
+    img: "",
   }
 ];
 
@@ -85,13 +89,18 @@ export const Work = () => {
               className="absolute inset-0 cursor-grab active:cursor-grabbing w-full h-full group"
             >
               <div className="w-full h-full relative overflow-hidden bg-surface shadow-2xl">
-                {/* 
-                  Drop your real next/image here!
-                  <Image src={projects[currentIndex].img} fill className="object-cover" alt="project" /> 
-                */}
-                <div className="w-full h-full bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] flex items-center justify-center">
-                  <span className="font-mono text-border text-sm">Image Proxy: {projects[currentIndex].title}</span>
-                </div>
+                {projects[currentIndex].img ? (
+                  <Image 
+                    src={projects[currentIndex].img} 
+                    fill 
+                    className="object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity duration-500" 
+                    alt={projects[currentIndex].title} 
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] flex items-center justify-center">
+                    <span className="font-mono text-border text-sm">Image Proxy: {projects[currentIndex].title}</span>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
               </div>
             </motion.div>
