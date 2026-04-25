@@ -21,81 +21,92 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[100svh] w-full overflow-hidden bg-black text-text-primary selection:bg-white selection:text-black flex flex-col justify-between px-6 md:px-10 lg:px-12 pt-32 md:pt-40 pb-6 md:pb-10">
+    <section className="relative h-[100svh] w-full overflow-hidden bg-bg text-text-primary selection:bg-accent selection:text-bg font-sans">
+      
+      {/* ── Subtle Top Border Line ── */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-border/30" />
 
-      {/* Middle Content Area */}
-      <div className="relative z-20 flex flex-col md:flex-row justify-between gap-16 md:gap-20 flex-1">
+      {/* ── Grid/Layout Container ── */}
+      <div className="relative h-full w-full px-8 md:px-12 lg:px-16 py-24 flex flex-col justify-center">
         
-        {/* Left Column: Service List */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col gap-3 self-center"
-        >
-          {["BESPOKE WEBSITES", "DIGITAL EXPERIENCES", "WEB APPLICATIONS", "VISUAL IDENTITY"].map((service) => (
-            <div key={service} className="flex items-center gap-3">
-              <span className="w-[10px] h-[10px] bg-white/50 inline-block flex-shrink-0" />
-              <span className="text-[12px] md:text-[13px] font-bold tracking-[0.08em] uppercase text-text-primary">
-                {service}
-              </span>
+        {/* ── Middle Layer: Content ── */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full z-20 gap-16 md:gap-0 mt-[-5vh]">
+          
+          {/* Left: Service List */}
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col gap-1.5"
+          >
+            {["BESPOKE WEBSITES", "DIGITAL EXPERIENCES", "WEB APPLICATIONS", "VISUAL IDENTITY"].map((service) => (
+              <div key={service} className="flex items-center gap-2.5">
+                <div className="w-[7px] h-[7px] bg-accent flex-shrink-0" />
+                <span className="text-[11px] md:text-[12px] font-bold tracking-[0.08em] uppercase text-text-primary/90 font-mono">
+                  {service}
+                </span>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Right: Decorative + Mission */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col items-end md:items-start gap-12"
+          >
+            {/* Decorative Symbol Row */}
+            <div className="flex items-start gap-3">
+              <span className="text-[64px] md:text-[72px] text-accent leading-[0.5] font-medium mt-3">*</span>
+              <div className="flex items-center gap-1">
+                <span className="text-[72px] md:text-[84px] text-border font-extralight leading-none mt-[-10px] inline-block transform scale-y-[1.4] scale-x-[0.6]">(</span>
+                <div className="w-[48px] h-[48px] border border-border z-10" />
+                <span className="text-[72px] md:text-[84px] text-border font-extralight leading-none mt-[-10px] inline-block transform scale-y-[1.4] scale-x-[0.6]">)</span>
+              </div>
             </div>
-          ))}
-        </motion.div>
 
-        {/* Right Column: Decorative Element + Mission Statement */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col gap-6 max-w-md self-center"
-        >
-          {/* Decorative Symbol Row */}
-          <div className="flex items-center gap-2">
-            <span className="text-[32px] md:text-[40px] text-[#c8d84c] leading-none">*</span>
-            <span className="text-[28px] md:text-[36px] text-text-secondary/40 font-light leading-none">(</span>
-            <span className="w-[36px] h-[28px] md:w-[44px] md:h-[34px] border border-text-secondary/30 bg-text-secondary/10 inline-block" />
-            <span className="text-[28px] md:text-[36px] text-text-secondary/40 font-light leading-none">)</span>
-          </div>
+            {/* Mission Statement */}
+            <p className="text-[12px] md:text-[14px] font-mono uppercase tracking-[0.1em] leading-[2] text-text-secondary text-right md:text-left max-w-[420px]">
+              I design and build high-performance
+              <br />
+              websites for <span className="text-text-primary">ambitious founders, bespoke</span>
+              <br />
+              <span className="text-text-primary">brands, and digital products.</span>
+            </p>
+          </motion.div>
+        </div>
 
-          {/* Mission Statement */}
-          <p className="text-[12px] md:text-[13px] font-mono uppercase tracking-[0.05em] leading-[1.8] text-text-primary/80">
-            I design and build high-performance websites for{" "}
-            <span className="text-text-primary font-bold">ambitious founders</span>, bespoke brands,{" "}
-            <span className="text-text-secondary/50">and</span> digital products.
-          </p>
-        </motion.div>
-      </div>
-
-      {/* Bottom Section: Massive Typography + Clock */}
-      <div className="relative z-20 w-full">
-        {/* AYUSH Typography - bleeds off bottom */}
-        <div className="relative overflow-hidden">
+        {/* ── Bottom Right: AYUSH ── */}
+        <div className="absolute bottom-[-3vh] right-0 z-10 pointer-events-none pr-8 md:pr-12 lg:pr-16 overflow-hidden">
           <motion.h1 
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-            className="font-black text-[25vw] md:text-[22vw] leading-[0.82] tracking-[-0.04em] uppercase text-text-primary select-none translate-y-[15%]"
+            initial={{ opacity: 0, y: 80 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            className="font-black text-[20vw] leading-[0.82] tracking-[-0.04em] uppercase text-text-primary select-none whitespace-nowrap text-right font-sans"
           >
             AYUSH
           </motion.h1>
         </div>
 
-        {/* Bottom Row: GLOBAL + Clock */}
+        {/* ── Bottom Left: GLOBAL + Clock ── */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="absolute bottom-0 left-0 flex flex-col gap-0 z-30"
+          transition={{ delay: 1.5, duration: 1 }}
+          className="absolute bottom-8 md:bottom-10 left-8 md:left-12 lg:left-16 z-30 flex flex-col gap-0.5"
         >
-          <span className="text-[11px] md:text-[12px] font-bold tracking-[0.1em] uppercase text-text-primary">
+          <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-text-primary/90 font-mono">
             GLOBAL
           </span>
-          <span className="text-[11px] md:text-[12px] font-mono tracking-[0.05em] text-accent">
+          <span className="text-[11px] font-mono tracking-[0.02em] text-text-secondary">
             {time}
           </span>
         </motion.div>
       </div>
+
+      {/* ── Bottom Border Line (matches section dividers) ── */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-border/50" />
     </section>
   );
 };

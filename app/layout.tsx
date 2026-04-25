@@ -26,6 +26,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-suisse-intl", displa
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-suisse-mono", display: "swap" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ayushgokul.vercel.app"),
   title: "Ayush Gokul — Landing Pages for Bootstrapped SaaS Founders",
   description: "I build fast, focused landing pages and portfolio sites for SaaS founders. Free mockup in 24 hours. Starting at ₹12,000.",
   openGraph: {

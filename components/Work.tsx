@@ -5,18 +5,21 @@ import { motion, AnimatePresence } from "framer-motion";
 const projects = [
   {
     id: "01",
-    title: "Sharada Opticals",
+    title: "Happy Feet",
     subtitle: "View Case",
+    link: "https://happyfeet-eight.vercel.app/",
   },
   {
     id: "02",
     title: "CRM Outreach + Lead Generator",
     subtitle: "View Case",
+    link: "#",
   },
   {
     id: "03",
     title: "Noir Grillz",
     subtitle: "View Case",
+    link: "#",
   }
 ];
 
@@ -116,11 +119,14 @@ export const Work = () => {
                 <span className="block">{projects[currentIndex].title.split(" ")[0]}</span>
                 <span className="block">{projects[currentIndex].title.split(" ").slice(1).join(" ")}</span>
               </h2>
-              <button 
+              <a 
+                href={projects[currentIndex].link}
+                target={projects[currentIndex].link !== "#" ? "_blank" : undefined}
+                rel={projects[currentIndex].link !== "#" ? "noopener noreferrer" : undefined}
                 className="mt-8 md:mt-12 self-start font-mono text-[11px] md:text-[13px] text-text-secondary uppercase tracking-[0.2em] border-b border-border hover:text-accent hover:border-accent transition-colors duration-300 pointer-events-auto pb-1"
               >
                 {projects[currentIndex].subtitle}
-              </button>
+              </a>
             </motion.div>
           </AnimatePresence>
         </div>
