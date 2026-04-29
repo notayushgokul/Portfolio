@@ -15,7 +15,7 @@ const projects = [
     id: "02",
     title: "CRM Outreach + Lead Generator",
     subtitle: "View Case",
-    link: "https://webfrontcrm.vercel.app/",
+    link: "#",
     img: "",
   },
   {
