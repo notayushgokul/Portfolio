@@ -30,7 +30,7 @@ export const Hero = () => {
       <div className="relative h-full w-full px-8 md:px-12 lg:px-16 py-24 flex flex-col justify-center">
         
         {/* ── Middle Layer: Content ── */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full z-20 gap-16 md:gap-0 mt-[-5vh]">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full z-20 gap-12 md:gap-0 mt-[-5vh] md:mt-[-5vh]">
           
           {/* Left: Service List */}
           <motion.div 
@@ -54,20 +54,20 @@ export const Hero = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-end md:items-start gap-12"
+            className="flex flex-col items-start gap-8 md:gap-12"
           >
             {/* Decorative Symbol Row */}
-            <div className="flex items-start gap-3">
-              <span className="text-[64px] md:text-[72px] text-accent leading-[0.5] font-medium mt-3">*</span>
+            <div className="flex items-start gap-2 md:gap-3 scale-75 md:scale-100 origin-left">
+              <span className="text-[54px] md:text-[72px] text-accent leading-[0.5] font-medium mt-3">*</span>
               <div className="flex items-center gap-1">
-                <span className="text-[72px] md:text-[84px] text-border font-extralight leading-none mt-[-10px] inline-block transform scale-y-[1.4] scale-x-[0.6]">(</span>
-                <div className="w-[48px] h-[48px] border border-border z-10" />
-                <span className="text-[72px] md:text-[84px] text-border font-extralight leading-none mt-[-10px] inline-block transform scale-y-[1.4] scale-x-[0.6]">)</span>
+                <span className="text-[60px] md:text-[84px] text-border font-extralight leading-none mt-[-10px] inline-block transform scale-y-[1.4] scale-x-[0.6]">(</span>
+                <div className="w-[36px] h-[36px] md:w-[48px] md:h-[48px] border border-border z-10" />
+                <span className="text-[60px] md:text-[84px] text-border font-extralight leading-none mt-[-10px] inline-block transform scale-y-[1.4] scale-x-[0.6]">)</span>
               </div>
             </div>
 
             {/* Mission Statement */}
-            <p className="text-[12px] md:text-[14px] font-mono uppercase tracking-[0.1em] leading-[2] text-text-secondary text-right md:text-left max-w-[420px]">
+            <p className="text-[11px] md:text-[14px] font-mono uppercase tracking-[0.1em] leading-[2] text-text-secondary text-left max-w-[420px]">
               I design and build high-performance
               <br />
               websites for <span className="text-text-primary">ambitious founders, bespoke</span>
@@ -78,12 +78,12 @@ export const Hero = () => {
         </div>
 
         {/* ── Bottom Right: AYUSH ── */}
-        <div className="absolute bottom-[-3vh] right-0 z-10 pointer-events-none pr-8 md:pr-12 lg:pr-16 overflow-hidden">
+        <div className="absolute bottom-[-1.5vh] md:bottom-[-3vh] right-0 z-10 pointer-events-none pr-6 md:pr-12 lg:pr-16 overflow-hidden">
           <motion.h1 
             initial={{ opacity: 0, y: 80 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="font-black text-[20vw] leading-[0.82] tracking-[-0.04em] uppercase text-text-primary select-none whitespace-nowrap text-right font-sans"
+            className="font-black text-[28vw] md:text-[20vw] leading-[0.82] tracking-[-0.04em] uppercase text-text-primary select-none whitespace-nowrap text-right font-sans"
           >
             AYUSH
           </motion.h1>
