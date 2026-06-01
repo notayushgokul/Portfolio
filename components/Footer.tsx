@@ -56,10 +56,6 @@ export const Footer = () => {
           </div>
           
           <div className="flex flex-col md:flex-row justify-between items-center w-full mt-10 md:mt-16 text-[14px] text-text-secondary font-sans border-none relative z-10">
-            <div className="flex gap-8 w-full md:w-auto mb-4 md:mb-0 justify-between md:justify-start">
-              <Link href="/terms" className="hover:text-text-primary transition-colors">Terms</Link>
-              <Link href="/privacy" className="hover:text-text-primary transition-colors">Privacy Policy</Link>
-            </div>
             <div className="w-full md:w-auto text-left md:text-right">
               © 2026 Ayush Gokul. All rights reserved
             </div>
