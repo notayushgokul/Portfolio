@@ -39,7 +39,7 @@ export const Hero = () => {
             transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col gap-1.5"
           >
-            {["BESPOKE WEBSITES", "DIGITAL EXPERIENCES", "WEB APPLICATIONS", "VISUAL IDENTITY"].map((service) => (
+            {["PRODUCT THINKING", "GTM", "PRODUCT BUILDER", "USER RESEARCH"].map((service) => (
               <div key={service} className="flex items-center gap-2.5">
                 <div className="w-[7px] h-[7px] bg-accent flex-shrink-0" />
                 <span className="text-[11px] md:text-[12px] font-bold tracking-[0.08em] uppercase text-text-primary/90 font-mono">
@@ -68,11 +68,11 @@ export const Hero = () => {
 
             {/* Mission Statement */}
             <p className="text-[11px] md:text-[14px] font-mono uppercase tracking-[0.1em] leading-[2] text-text-secondary text-left max-w-[420px]">
-              I design and build high-performance
+              I bridge strategy and execution to
               <br />
-              websites for <span className="text-text-primary">ambitious founders, bespoke</span>
+              help <span className="text-text-primary">founders define, build, and ship</span>
               <br />
-              <span className="text-text-primary">brands, and digital products.</span>
+              <span className="text-text-primary">zero-to-one digital products.</span>
             </p>
           </motion.div>
         </div>
