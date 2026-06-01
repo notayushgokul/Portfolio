@@ -70,9 +70,9 @@ export const Hero = () => {
             <p className="text-[11px] md:text-[14px] font-mono uppercase tracking-[0.1em] leading-[2] text-text-secondary text-left max-w-[420px]">
               I bridge strategy and execution to
               <br />
-              help <span className="text-text-primary">founders define, build, and ship</span>
+              help <span className="text-text-primary">founders validate, refine</span>
               <br />
-              <span className="text-text-primary">zero-to-one digital products.</span>
+              <span className="text-text-primary">and improve products.</span>
             </p>
           </motion.div>
         </div>
