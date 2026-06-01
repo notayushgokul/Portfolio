@@ -21,8 +21,8 @@ const projects: Project[] = [
   {
     id: "0.0.1",
     title: "HappyFeet",
-    tag: "PDF REPORT",
-    desc: "A detailed product teardown and UX audit focusing on improving user retention, conversion funnels, and interactive interfaces for the HappyFeet mobile application.",
+    tag: "CASE STUDY",
+    desc: "Built from a real problem on college campuses, HappyFeet is a peer to peer campus delivery app.",
     link: "/pdfs/HappyFeet.pdf"
   },
   {
