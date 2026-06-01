@@ -42,8 +42,8 @@ export const Contact = () => {
           className="w-full md:w-3/4 max-w-2xl flex flex-col"
         >
           <h2 className="font-semibold text-[clamp(28px,3vw,44px)] leading-[1.15] tracking-tight mb-20">
-            <span className="text-text-secondary">We are eager to build a cohesive digital world for your ideas. </span>
-            <span className="text-text-primary">Drop your details below and watch your vision takes shape.</span>
+            <span className="text-text-secondary">I&apos;m always down to talk about a problem worth solving. </span>
+            <span className="text-text-primary">Drop your details and lets figure something out.</span>
           </h2>
 
 
@@ -62,10 +62,7 @@ export const Contact = () => {
                 <input required type="email" id="email" name="email" className="bg-transparent border-none px-0 py-1 text-[20px] md:text-[24px] text-text-primary placeholder-text-secondary/30 focus:outline-none focus:ring-0 w-full" placeholder="Email address" />
               </div>
 
-              <div className="flex flex-col gap-3 border-b border-[#333] pb-4 group hover:border-[#666] transition-colors focus-within:border-accent">
-                <label htmlFor="company" className="font-mono text-[10px] text-text-secondary uppercase tracking-[0.1em]">Your company name</label>
-                <input type="text" id="company" name="company" className="bg-transparent border-none px-0 py-1 text-[20px] md:text-[24px] text-text-primary placeholder-text-secondary/30 focus:outline-none focus:ring-0 w-full" placeholder="Company name (optional)" />
-              </div>
+
 
               {/* Keep the service hidden input mapped to "Not sure yet" since the visual doesn't have a select, we simplify the visual UI */}
               <input type="hidden" name="service" value="Not sure yet" />
