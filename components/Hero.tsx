@@ -67,12 +67,8 @@ export const Hero = () => {
             </div>
 
             {/* Mission Statement */}
-            <p className="text-[11px] md:text-[14px] font-mono uppercase tracking-[0.1em] leading-[2] text-text-secondary text-left max-w-[420px]">
-              I bridge strategy and execution to
-              <br />
-              help <span className="text-text-primary">founders validate, refine</span>
-              <br />
-              <span className="text-text-primary">and improve products.</span>
+            <p className="text-[12px] md:text-[14px] font-mono tracking-normal leading-[1.7] text-text-secondary text-left max-w-[420px]">
+              I&apos;ve validated products through user research, shipped full-stack MVPs, and torn down why funded startups failed. <span className="text-text-primary">Looking for a PM role where I can do all three.</span>
             </p>
           </motion.div>
         </div>
