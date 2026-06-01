@@ -23,7 +23,10 @@ export const Footer = () => {
           <h2 className="text-[clamp(28px,5vw,60px)] font-sans font-medium tracking-tight md:mb-0">
             Reach out to me
           </h2>
-          <a href="mailto:ayushgokul2207@gmail.com" className="text-[clamp(16px,5vw,60px)] font-sans font-medium tracking-tight hover:text-accent transition-colors break-all md:break-normal">
+          <a 
+            href="mailto:ayushgokul2207@gmail.com" 
+            className="text-[17px] min-[375px]:text-[20px] sm:text-2xl md:text-3xl lg:text-[4vw] xl:text-[50px] 2xl:text-[60px] font-sans font-medium tracking-tight hover:text-accent transition-colors break-all md:break-normal block w-full md:w-auto text-left md:text-right"
+          >
             ayushgokul2207@gmail.com
           </a>
         </div>
