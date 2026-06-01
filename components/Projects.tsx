@@ -2,7 +2,22 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const projects = [
+interface SubItem {
+  name: string;
+  tag: string;
+  link: string;
+}
+
+interface Project {
+  id: string;
+  title: string;
+  tag: string;
+  desc: string;
+  link?: string;
+  subItems?: SubItem[];
+}
+
+const projects: Project[] = [
   {
     id: "0.0.1",
     title: "HappyFeet",
@@ -26,10 +41,28 @@ const projects = [
   },
   {
     id: "0.0.4",
+    title: "Field Service Ticketing Portal",
+    tag: "CASE STUDY",
+    desc: "A comprehensive case study detailing the UI/UX architecture and service ticketing workflow designed to streamline dispatch operations, tracking, and engineer assignment efficiency.",
+    link: "/pdfs/Field_Service_Ticketing_Portal.pdf"
+  },
+  {
+    id: "0.0.5",
     title: "Other Artifacts",
     tag: "RESOURCE HUB",
-    desc: "A compiled collection of research notes, product teardowns, design sketches, and various other technical and design artifacts.",
-    link: "/pdfs/Other_Artifacts.pdf"
+    desc: "A compiled collection of UX and product audits, research notes, design files, and other digital resources.",
+    subItems: [
+      {
+        name: "Fyn Wellness Audit",
+        tag: "UX AUDIT",
+        link: "/pdfs/Fyn_Wellness_Audit.pdf"
+      },
+      {
+        name: "FlatX Product Audit",
+        tag: "PRODUCT AUDIT",
+        link: "/pdfs/FlatX_Product_Audit.pdf"
+      }
+    ]
   }
 ];
 
@@ -51,13 +84,17 @@ export const Projects = () => {
             key={i}
             onMouseEnter={() => setHoveredIndex(i)}
             onMouseLeave={() => setHoveredIndex(null)}
-            onClick={() => window.open(proj.link, '_blank')}
+            onClick={() => {
+              if (proj.link) {
+                window.open(proj.link, '_blank');
+              }
+            }}
             className="group relative border-b border-border/30 last:border-b-0 cursor-pointer overflow-hidden py-10 lg:py-16 px-6 lg:px-12 transition-colors duration-500 hover:bg-[#080808]"
           >
             <div className="max-w-7xl mx-auto flex items-center justify-between w-full relative z-10">
               
               <h3 
-                className={`font-semibold text-[clamp(40px,6vw,100px)] leading-[0.85] tracking-tighter transition-colors duration-500 uppercase ${
+                className={`font-semibold text-[clamp(36px,5.5vw,90px)] leading-[0.85] tracking-tighter transition-colors duration-500 uppercase ${
                   hoveredIndex === i 
                     ? 'text-text-primary' 
                     : (hoveredIndex !== null ? 'text-[#1a1a1a]' : 'text-[#333]')
@@ -80,18 +117,56 @@ export const Projects = () => {
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   className="max-w-7xl mx-auto pt-8 pb-2 relative z-10 flex flex-col md:flex-row gap-6 md:gap-16 justify-between items-start md:items-end mt-4 md:mt-8"
+                  onClick={(e) => {
+                    // Prevent row click when clicking on the expanded area
+                    e.stopPropagation();
+                  }}
                 >
                   <p className="text-[16px] md:text-[20px] text-text-secondary max-w-xl leading-[1.6]">
                     {proj.desc}
                   </p>
-                  <div className="flex gap-4 items-center">
-                    <span className="font-mono text-[10px] md:text-[11px] text-accent uppercase tracking-[0.1em] border border-border px-4 py-2 rounded-full whitespace-nowrap">
-                      {proj.tag}
-                    </span>
-                    <span className="font-mono text-[10px] md:text-[11px] text-white uppercase tracking-[0.1em] bg-accent/10 border border-accent/30 px-4 py-2 rounded-full whitespace-nowrap hover:bg-accent hover:text-black transition-colors">
-                      VIEW PDF ↗
-                    </span>
-                  </div>
+                  
+                  {proj.subItems ? (
+                    <div className="flex flex-col gap-3 w-full md:w-auto items-start md:items-end">
+                      <span className="font-mono text-[9px] text-text-secondary tracking-[0.1em] uppercase">Artifacts:</span>
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        {proj.subItems.map((sub, idx) => (
+                          <a
+                            key={idx}
+                            href={sub.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-3 bg-white/5 border border-border/40 hover:border-accent hover:bg-accent/10 px-4 py-2.5 rounded-full transition-all duration-300 group/sub whitespace-nowrap"
+                          >
+                            <span className="font-sans text-[14px] font-semibold text-text-primary group-hover/sub:text-accent transition-colors">
+                              {sub.name}
+                            </span>
+                            <span className="font-mono text-[9px] text-accent tracking-[0.1em] border border-accent/20 px-2 py-0.5 rounded-full uppercase">
+                              {sub.tag}
+                            </span>
+                            <span className="text-[12px] text-text-secondary group-hover/sub:text-accent group-hover/sub:translate-x-0.5 transition-all">
+                              ↗
+                            </span>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex gap-4 items-center">
+                      <span className="font-mono text-[10px] md:text-[11px] text-accent uppercase tracking-[0.1em] border border-border px-4 py-2 rounded-full whitespace-nowrap">
+                        {proj.tag}
+                      </span>
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (proj.link) window.open(proj.link, '_blank');
+                        }}
+                        className="font-mono text-[10px] md:text-[11px] text-white uppercase tracking-[0.1em] bg-accent/10 border border-accent/30 px-4 py-2 rounded-full whitespace-nowrap hover:bg-accent hover:text-black transition-colors"
+                      >
+                        VIEW PDF ↗
+                      </button>
+                    </div>
+                  )}
                 </motion.div>
               )}
             </AnimatePresence>
