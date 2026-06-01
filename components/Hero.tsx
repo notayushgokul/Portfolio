@@ -94,7 +94,7 @@ export const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-8 md:bottom-10 left-8 md:left-12 lg:left-16 z-30 flex flex-col gap-0.5"
+          className="absolute bottom-32 md:bottom-10 left-8 md:left-12 lg:left-16 z-30 flex flex-col gap-0.5"
         >
           <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-text-primary/90 font-mono">
             GLOBAL
