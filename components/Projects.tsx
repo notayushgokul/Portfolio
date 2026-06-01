@@ -27,9 +27,9 @@ const projects: Project[] = [
   },
   {
     id: "0.0.2",
-    title: "Webfront Outreach & AI Gen",
-    tag: "SYSTEM DESIGN",
-    desc: "Building a scalable AI-driven cold outreach and automated lead generation pipeline that dynamically finds, qualifies, and drafts personalized copy for prospective clients.",
+    title: "WebFront Outreach and AI Lead Gen",
+    tag: "CASE STUDY",
+    desc: "Everyone's selling websites to local businesses. I built the tool to make the sales part not suck — auto-scrapes Google Maps, pulls contact info, tracks calls, and tells you who needs a site.",
     link: "/pdfs/Webfront_Outreach_AI_Lead_Gen.pdf"
   },
   {
@@ -54,7 +54,7 @@ const projects: Project[] = [
     subItems: [
       {
         name: "Fyn Wellness Audit",
-        tag: "UX AUDIT",
+        tag: "PRODUCT AUDIT",
         link: "/pdfs/Fyn_Wellness_Audit.pdf"
       },
       {
