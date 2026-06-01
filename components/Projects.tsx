@@ -68,6 +68,7 @@ const projects: Project[] = [
 
 export const Projects = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
     <section id="projects" className="py-24 lg:py-32 bg-bg w-full">
@@ -79,104 +80,105 @@ export const Projects = () => {
         </div>
       </div>
       <div className="flex flex-col border-y border-border/50">
-        {projects.map((proj, i) => (
-          <div 
-            key={i}
-            onMouseEnter={() => setHoveredIndex(i)}
-            onMouseLeave={() => setHoveredIndex(null)}
-            onClick={() => {
-              if (proj.link) {
-                window.open(proj.link, '_blank');
-              }
-            }}
-            className="group relative border-b border-border/30 last:border-b-0 cursor-pointer overflow-hidden py-10 lg:py-16 px-6 lg:px-12 transition-colors duration-500 hover:bg-[#080808]"
-          >
-            <div className="max-w-7xl mx-auto flex items-center justify-between w-full relative z-10">
-              
-              <h3 
-                className={`font-semibold text-[clamp(36px,5.5vw,90px)] leading-[0.85] tracking-tighter transition-colors duration-500 uppercase ${
-                  hoveredIndex === i 
-                    ? 'text-text-primary' 
-                    : (hoveredIndex !== null ? 'text-[#1a1a1a]' : 'text-[#333]')
-                }`}
-              >
-                {proj.title}
-              </h3>
+        {projects.map((proj, i) => {
+          const isOpen = hoveredIndex === i || expandedIndex === i;
+          const isAnyHovered = hoveredIndex !== null;
 
-              <div className={`flex items-center gap-4 md:gap-12 transition-opacity duration-500 ${hoveredIndex === i ? 'opacity-100' : 'opacity-40'}`}>
-                <span className="font-mono text-[10px] md:text-[12px] text-text-secondary tracking-[0.1em]">({proj.id})</span>
-                <span className={`text-[20px] md:text-[28px] transform transition-transform duration-500 ${hoveredIndex === i ? 'translate-x-4 md:translate-x-8 text-text-primary' : 'text-[#333]'}`}>→</span>
-              </div>
-            </div>
-
-            <AnimatePresence>
-              {hoveredIndex === i && (
-                <motion.div 
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                  className="max-w-7xl mx-auto pt-8 pb-2 relative z-10 flex flex-col md:flex-row gap-6 md:gap-16 justify-between items-start md:items-end mt-4 md:mt-8"
-                  onClick={(e) => {
-                    // Prevent row click when clicking on the expanded area
-                    e.stopPropagation();
-                  }}
-                >
-                  <p className="text-[16px] md:text-[20px] text-text-secondary max-w-xl leading-[1.6]">
-                    {proj.desc}
-                  </p>
-                  
-                  {proj.subItems ? (
-                    <div className="flex flex-col gap-3 w-full md:w-auto items-start md:items-end">
-                      <span className="font-mono text-[9px] text-text-secondary tracking-[0.1em] uppercase">Artifacts:</span>
-                      <div className="flex flex-col sm:flex-row gap-3">
-                        {proj.subItems.map((sub, idx) => (
-                          <a
-                            key={idx}
-                            href={sub.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-3 bg-white/5 border border-border/40 hover:border-accent hover:bg-accent/10 px-4 py-2.5 rounded-full transition-all duration-300 group/sub whitespace-nowrap"
-                          >
-                            <span className="font-sans text-[14px] font-semibold text-text-primary group-hover/sub:text-accent transition-colors">
-                              {sub.name}
-                            </span>
-                            <span className="font-mono text-[9px] text-accent tracking-[0.1em] border border-accent/20 px-2 py-0.5 rounded-full uppercase">
-                              {sub.tag}
-                            </span>
-                            <span className="text-[12px] text-text-secondary group-hover/sub:text-accent group-hover/sub:translate-x-0.5 transition-all">
-                              ↗
-                            </span>
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="flex gap-4 items-center">
-                      <span className="font-mono text-[10px] md:text-[11px] text-accent uppercase tracking-[0.1em] border border-border px-4 py-2 rounded-full whitespace-nowrap">
-                        {proj.tag}
-                      </span>
-                      <button 
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          if (proj.link) window.open(proj.link, '_blank');
-                        }}
-                        className="font-mono text-[10px] md:text-[11px] text-white uppercase tracking-[0.1em] bg-accent/10 border border-accent/30 px-4 py-2 rounded-full whitespace-nowrap hover:bg-accent hover:text-black transition-colors"
-                      >
-                        VIEW PDF ↗
-                      </button>
-                    </div>
-                  )}
-                </motion.div>
-              )}
-            </AnimatePresence>
-            
-            {/* Ambient Background Light on Hover */}
+          return (
             <div 
-              className={`absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,241,91,0.02)_0%,transparent_50%)] transition-opacity duration-700 pointer-events-none z-0 ${hoveredIndex === i ? 'opacity-100' : 'opacity-0'}`}
-            />
-          </div>
-        ))}
+              key={i}
+              onMouseEnter={() => setHoveredIndex(i)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
+              className={`group relative border-b border-border/30 last:border-b-0 cursor-pointer overflow-hidden py-10 lg:py-16 px-6 lg:px-12 transition-colors duration-500 ${isOpen ? 'bg-[#080808]' : 'hover:bg-[#080808]'}`}
+            >
+              <div className="max-w-7xl mx-auto flex items-center justify-between w-full relative z-10">
+                
+                <h3 
+                  className={`font-semibold text-[clamp(28px,5vw,90px)] leading-[0.85] tracking-tighter transition-colors duration-500 uppercase ${
+                    isOpen 
+                      ? 'text-text-primary' 
+                      : (isAnyHovered ? 'text-[#1a1a1a]' : 'text-[#333]')
+                  }`}
+                >
+                  {proj.title}
+                </h3>
+
+                <div className={`flex items-center gap-4 md:gap-12 transition-opacity duration-500 ${isOpen ? 'opacity-100' : 'opacity-40'}`}>
+                  <span className="font-mono text-[10px] md:text-[12px] text-text-secondary tracking-[0.1em]">({proj.id})</span>
+                  <span className={`text-[20px] md:text-[28px] transform transition-transform duration-500 ${isOpen ? 'translate-x-4 md:translate-x-8 text-text-primary rotate-90 md:rotate-0' : 'text-[#333]'}`}>→</span>
+                </div>
+              </div>
+
+              <AnimatePresence>
+                {isOpen && (
+                  <motion.div 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    className="max-w-7xl mx-auto pt-8 pb-2 relative z-10 flex flex-col md:flex-row gap-6 md:gap-16 justify-between items-start md:items-end mt-4 md:mt-8"
+                    onClick={(e) => {
+                      // Prevent row click when clicking on the expanded area
+                      e.stopPropagation();
+                    }}
+                  >
+                    <p className="text-[16px] md:text-[20px] text-text-secondary max-w-xl leading-[1.6]">
+                      {proj.desc}
+                    </p>
+                    
+                    {proj.subItems ? (
+                      <div className="flex flex-col gap-3 w-full md:w-auto items-start md:items-end">
+                        <span className="font-mono text-[9px] text-text-secondary tracking-[0.1em] uppercase">Artifacts:</span>
+                        <div className="flex flex-col sm:flex-row gap-3">
+                          {proj.subItems.map((sub, idx) => (
+                            <a
+                              key={idx}
+                              href={sub.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-3 bg-white/5 border border-border/40 hover:border-accent hover:bg-accent/10 px-4 py-2.5 rounded-full transition-all duration-300 group/sub whitespace-nowrap"
+                            >
+                              <span className="font-sans text-[14px] font-semibold text-text-primary group-hover/sub:text-accent transition-colors">
+                                {sub.name}
+                              </span>
+                              <span className="font-mono text-[9px] text-accent tracking-[0.1em] border border-accent/20 px-2 py-0.5 rounded-full uppercase">
+                                {sub.tag}
+                              </span>
+                              <span className="text-[12px] text-text-secondary group-hover/sub:text-accent group-hover/sub:translate-x-0.5 transition-all">
+                                ↗
+                              </span>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex gap-4 items-center">
+                        <span className="font-mono text-[10px] md:text-[11px] text-accent uppercase tracking-[0.1em] border border-border px-4 py-2 rounded-full whitespace-nowrap">
+                          {proj.tag}
+                        </span>
+                        <button 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            if (proj.link) window.open(proj.link, '_blank');
+                          }}
+                          className="font-mono text-[10px] md:text-[11px] text-white uppercase tracking-[0.1em] bg-accent/10 border border-accent/30 px-4 py-2 rounded-full whitespace-nowrap hover:bg-accent hover:text-black transition-colors"
+                        >
+                          VIEW PDF ↗
+                        </button>
+                      </div>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+              
+              {/* Ambient Background Light on Hover */}
+              <div 
+                className={`absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,241,91,0.02)_0%,transparent_50%)] transition-opacity duration-700 pointer-events-none z-0 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
+              />
+            </div>
+          );
+        })}
       </div>
     </section>
   );
