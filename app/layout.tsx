@@ -27,8 +27,8 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-sui
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ayushgokul.vercel.app"),
-  title: "Ayush Gokul — Landing Pages for Bootstrapped SaaS Founders",
-  description: "I build fast, focused landing pages and portfolio sites for SaaS founders. Free mockup in 24 hours. Starting at ₹12,000.",
+  title: "Ayush Gokul - Portfolio",
+  description: "Product Manager Portfolio — Ayush Gokul. Validated products through user research, shipped full-stack MVPs, and analyzed startup teardowns.",
   openGraph: {
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
