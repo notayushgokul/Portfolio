@@ -41,10 +41,10 @@ const projects: Project[] = [
   },
   {
     id: "0.0.4",
-    title: "Field Service Ticketing Portal",
+    title: "OEM Complaint Portal",
     tag: "CASE STUDY",
-    desc: "A comprehensive case study detailing the UI/UX architecture and service ticketing workflow designed to streamline dispatch operations, tracking, and engineer assignment efficiency.",
-    link: "/pdfs/Field_Service_Ticketing_Portal.pdf"
+    desc: "Built to replace a WhatsApp-based complaint workflow. Covers product decisions, role architecture, and real-time ticketing.",
+    link: "https://gaudy-mimosa-452.notion.site/OEM-Complaint-Management-Portal-372768b79b8e8044a030f1b462ca823e?pvs=143"
   },
   {
     id: "0.0.5",
@@ -164,7 +164,7 @@ export const Projects = () => {
                           }}
                           className="font-mono text-[10px] md:text-[11px] text-white uppercase tracking-[0.1em] bg-accent/10 border border-accent/30 px-4 py-2 rounded-full whitespace-nowrap hover:bg-accent hover:text-black transition-colors"
                         >
-                          VIEW PDF ↗
+                          {proj.link?.startsWith('http') ? "READ CASE STUDY ↗" : "VIEW PDF ↗"}
                         </button>
                       </div>
                     )}
