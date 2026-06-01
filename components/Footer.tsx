@@ -21,7 +21,7 @@ export const Footer = () => {
         {/* Big Work with us Text */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 md:mb-24 px-2">
           <h2 className="text-4xl sm:text-5xl md:text-[4vw] lg:text-[60px] font-sans font-medium tracking-tight mb-4 md:mb-0">
-            Work with me
+            Reach out to me
           </h2>
           <a href="mailto:ayushgokul2207@gmail.com" className="text-4xl sm:text-5xl md:text-[4vw] lg:text-[60px] font-sans font-medium tracking-tight hover:text-accent transition-colors">
             ayushgokul2207@gmail.com
@@ -41,9 +41,9 @@ export const Footer = () => {
           </div>
           <div className="flex flex-col gap-4 text-[15px]">
             <h3 className="font-sans text-text-primary mb-2">Socials</h3>
-            <Link href="https://instagram.com/ayushgokul" className="text-text-secondary hover:text-text-primary transition-colors">Instagram</Link>
+            <Link href="https://instagram.com/notayushgokul" className="text-text-secondary hover:text-text-primary transition-colors">Instagram</Link>
             <Link href="https://twitter.com/ayushgokul" className="text-text-secondary hover:text-text-primary transition-colors">X</Link>
-            <Link href="https://linkedin.com/in/ayushgokul" className="text-text-secondary hover:text-text-primary transition-colors">Linkedin</Link>
+            <Link href="https://www.linkedin.com/in/ayush-gokul-b39758365" className="text-text-secondary hover:text-text-primary transition-colors">Linkedin</Link>
           </div>
         </div>
 
