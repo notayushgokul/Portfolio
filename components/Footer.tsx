@@ -19,11 +19,11 @@ export const Footer = () => {
         </div>
 
         {/* Big Work with us Text */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 md:mb-24 px-2">
-          <h2 className="text-4xl sm:text-5xl md:text-[4vw] lg:text-[60px] font-sans font-medium tracking-tight mb-4 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 md:mb-24 px-2 gap-4">
+          <h2 className="text-[clamp(28px,5vw,60px)] font-sans font-medium tracking-tight md:mb-0">
             Reach out to me
           </h2>
-          <a href="mailto:ayushgokul2207@gmail.com" className="text-4xl sm:text-5xl md:text-[4vw] lg:text-[60px] font-sans font-medium tracking-tight hover:text-accent transition-colors">
+          <a href="mailto:ayushgokul2207@gmail.com" className="text-[clamp(16px,5vw,60px)] font-sans font-medium tracking-tight hover:text-accent transition-colors break-all md:break-normal">
             ayushgokul2207@gmail.com
           </a>
         </div>
