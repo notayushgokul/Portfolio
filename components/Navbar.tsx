@@ -32,7 +32,7 @@ export const Navbar = () => {
 
       {/* Links spanning toward the right */}
       <div className={`hidden md:flex justify-end gap-12 lg:gap-16 w-full text-[12px] font-bold tracking-[0.12em] uppercase mt-3 transition-colors ${scrolled ? "text-white" : "text-white/90"}`}>
-        <Link href="/#services" className="hover:text-[#D4FF00] transition-colors">SERVICES</Link>
+        <Link href="/#projects" className="hover:text-[#D4FF00] transition-colors">PROJECTS</Link>
         <Link href="/#contact" className="hover:text-[#D4FF00] transition-colors">BOOK A CALL →</Link>
       </div>
       

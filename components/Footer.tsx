@@ -13,7 +13,7 @@ export const Footer = () => {
           </div>
           <div className="flex flex-wrap items-center gap-6 lg:gap-8 text-text-secondary text-[15px]">
             <Link href="/" className="hover:text-text-primary transition-colors">Home</Link>
-            <Link href="/#services" className="hover:text-text-primary transition-colors">Services</Link>
+            <Link href="/#projects" className="hover:text-text-primary transition-colors">Projects</Link>
             <Link href="/#contact" className="hover:text-text-primary transition-colors">Contact</Link>
           </div>
         </div>
@@ -36,7 +36,7 @@ export const Footer = () => {
           <div className="flex flex-col gap-4 text-[15px]">
             <h3 className="font-sans text-text-primary mb-2">Sitemap</h3>
             <Link href="/" className="text-text-secondary hover:text-text-primary transition-colors">Home</Link>
-            <Link href="/#services" className="text-text-secondary hover:text-text-primary transition-colors">Services</Link>
+            <Link href="/#projects" className="text-text-secondary hover:text-text-primary transition-colors">Projects</Link>
             <Link href="/#contact" className="text-text-secondary hover:text-text-primary transition-colors">Contact</Link>
           </div>
           <div className="flex flex-col gap-4 text-[15px]">
