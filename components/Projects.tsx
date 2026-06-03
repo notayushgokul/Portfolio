@@ -56,12 +56,14 @@ const projects: Project[] = [
         name: "Fyn Wellness Audit",
         tag: "PRODUCT AUDIT",
         link: "/pdfs/Fyn_Wellness_Audit.pdf"
-      },
+      }
+      /*
       {
         name: "FlatX Product Audit",
         tag: "PRODUCT AUDIT",
         link: "/pdfs/FlatX_Product_Audit.pdf"
       }
+      */
     ]
   }
 ];
