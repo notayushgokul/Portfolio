@@ -46,7 +46,6 @@ const projects: Project[] = [
     desc: "Built to replace a WhatsApp-based complaint workflow. Covers product decisions, role architecture, and real-time ticketing.",
     link: "https://gaudy-mimosa-452.notion.site/OEM-Complaint-Management-Portal-372768b79b8e8044a030f1b462ca823e?pvs=143"
   },
-  /*
   {
     id: "0.0.5",
     title: "Other Artifacts",
@@ -65,7 +64,6 @@ const projects: Project[] = [
       }
     ]
   }
-  */
 ];
 
 export const Projects = () => {
