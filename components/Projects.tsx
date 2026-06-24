@@ -49,7 +49,7 @@ const projects: Project[] = [
     id: "0.0.3",
     title: "BluSmart Failure Teardown",
     tag: "PRODUCT ANALYSIS",
-    desc: "A deep dive teardown of BluSmart's operational model, analyzing system failures, reliability issues, and design bottlenecks with suggested UX and structural solutions.",
+    desc: "Diving into BluSmart's failure beyond fraud",
     link: "/pdfs/BluSmart_Failure_Teardown.pdf"
   },
   {
