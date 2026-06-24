@@ -15,6 +15,7 @@ interface Project {
   desc: string;
   link?: string;
   subItems?: SubItem[];
+  subItemsLabel?: string;
 }
 
 const projects: Project[] = [
@@ -27,10 +28,22 @@ const projects: Project[] = [
   },
   {
     id: "0.0.2",
-    title: "WebFront Outreach and AI Lead Gen",
+    title: "RAG Compliance",
     tag: "CASE STUDY",
-    desc: "Everyone's selling websites to local businesses. I built the tool to make the sales part not suck — auto-scrapes Google Maps, pulls contact info, tracks calls, and tells you who needs a site.",
-    link: "/pdfs/Webfront_Outreach_AI_Lead_Gen.pdf"
+    desc: "An AI-powered compliance search assistant designed for Indian regulations. Implements Retrieval-Augmented Generation (RAG) to query, analyze, and verify regulatory documents with source citation.",
+    subItems: [
+      {
+        name: "GitHub Repository",
+        tag: "CODEBASE",
+        link: "https://github.com/notayushgokul/compliance-rag"
+      },
+      {
+        name: "Live Application",
+        tag: "WEB APP",
+        link: "https://indiancompliancerag.streamlit.app/"
+      }
+    ],
+    subItemsLabel: "Links"
   },
   {
     id: "0.0.3",
@@ -129,7 +142,7 @@ export const Projects = () => {
                     
                     {proj.subItems ? (
                       <div className="flex flex-col gap-3 w-full md:w-auto items-start md:items-end">
-                        <span className="font-mono text-[9px] text-text-secondary tracking-[0.1em] uppercase">Artifacts:</span>
+                        <span className="font-mono text-[9px] text-text-secondary tracking-[0.1em] uppercase">{proj.subItemsLabel || "Artifacts"}:</span>
                         <div className="flex flex-col sm:flex-row gap-3">
                           {proj.subItems.map((sub, idx) => (
                             <a
